@@ -15,12 +15,12 @@ class SSR : public SSRCommandInterface
 public:
 	SSR();
     void begin(IOTCallbackInterface* pcb);
-    void SetDutyCycle(int percent);
+    void SetDutyCycle(uint32_t percent);
     bool ProcessMQTTMessage(char *payload);
 
 protected:
     IOTCallbackInterface* _pcb;
 private:
-    int _currentDutyCycle = 0;
+    uint32_t _currentDutyCycle = 0;
 };
 } // namespace MQTTtoPWM
