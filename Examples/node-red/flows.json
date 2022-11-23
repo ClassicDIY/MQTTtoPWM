@@ -1,0 +1,151 @@
+[
+    {
+        "id": "a75c03cf66813aad",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f047ced3ac28b641",
+        "type": "mqtt out",
+        "z": "a75c03cf66813aad",
+        "name": "MQTTtoPWM",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37f2be5b778a773e",
+        "x": 500,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "68816d1ff0dca87a",
+        "type": "inject",
+        "z": "a75c03cf66813aad",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "MQTTtoPWM/SSR1/cmnd",
+        "payload": "{\"dutyCycle\":60}",
+        "payloadType": "str",
+        "x": 240,
+        "y": 280,
+        "wires": [
+            [
+                "f047ced3ac28b641"
+            ]
+        ]
+    },
+    {
+        "id": "940c940a6f2b0172",
+        "type": "mqtt in",
+        "z": "a75c03cf66813aad",
+        "name": "",
+        "topic": "MQTTtoPWM/SSR1/stat/dutyCycle",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "37f2be5b778a773e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 380,
+        "wires": [
+            [
+                "aa9d2d552084fa7e"
+            ]
+        ]
+    },
+    {
+        "id": "aa9d2d552084fa7e",
+        "type": "debug",
+        "z": "a75c03cf66813aad",
+        "name": "dutyCycle",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "a4fe0c3baf177e51",
+        "type": "inject",
+        "z": "a75c03cf66813aad",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "MQTTtoPWM/SSR1/cmnd",
+        "payload": "{\"dutyCycle\":20}",
+        "payloadType": "str",
+        "x": 240,
+        "y": 220,
+        "wires": [
+            [
+                "f047ced3ac28b641"
+            ]
+        ]
+    },
+    {
+        "id": "37f2be5b778a773e",
+        "type": "mqtt-broker",
+        "name": "Mosquitto",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
