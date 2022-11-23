@@ -13,7 +13,9 @@
 -->
 
 <img src="./Pictures/WIP.jpg" width="200"/>
-
+<p>
+To configure, Connect to the Wifi 'MQTTtoPWM' Access Point then sign in using Username: admin and Password: MQTTtoPWM
+</p>
 <p>
 The software is provided "AS IS", WITHOUT WARRANTY OF ANY KIND, express or implied.
 </p>
