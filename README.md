@@ -1,6 +1,6 @@
 # MQTTtoPWM
 
-<h2>Simple ESP32 MQTT interface to SSR</h2>
+<h2>Simple ESP32 MQTT interface to control a Solid State Relay.</h2>
 
 <a href="https://www.buymeacoffee.com/r4K2HIB" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
@@ -13,6 +13,11 @@
 -->
 
 <img src="./Pictures/WIP.jpg" width="200"/>
+
+<p>
+Use with node-red to control a diversion load used with solar PV panels, wind generators and Hydro generator renewable energy systems.
+</p>
+
 <p>
 To configure, Connect to the Wifi 'MQTTtoPWM' Access Point then sign in using Username: admin and Password: MQTTtoPWM
 </p>
